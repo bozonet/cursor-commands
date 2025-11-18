@@ -587,7 +587,7 @@ if [[ ${#PR_TITLES[@]} -gt 0 ]]; then
 "
     PR_BODY+="$SECTION"
     for PR_LABEL in "${PR_TITLES[@]}"; do
-        printf -v LINE "- %s\n" "${PR_LABEL}"
+        LINE=$(printf -- "- %s\n" "${PR_LABEL}")
         PR_BODY+="$LINE"
     done
     PR_BODY+=$'\n'
@@ -599,7 +599,7 @@ if [[ ${#COMMIT_TITLES[@]} -gt 0 ]]; then
 "
     PR_BODY+="$SECTION"
     for COMMIT_TITLE in "${COMMIT_TITLES[@]}"; do
-        printf -v LINE "- %s\n" "${COMMIT_TITLE}"
+        LINE=$(printf -- "- %s\n" "${COMMIT_TITLE}")
         PR_BODY+="$LINE"
     done
     PR_BODY+=$'\n'
@@ -611,7 +611,7 @@ if [[ ${#FAILED_ITEMS[@]} -gt 0 ]]; then
 "
     PR_BODY+="$SECTION"
     for FAILED_ITEM in "${FAILED_ITEMS[@]}"; do
-        printf -v LINE "- %s\n" "${FAILED_ITEM}"
+        LINE=$(printf -- "- %s\n" "${FAILED_ITEM}")
         PR_BODY+="$LINE"
     done
     PR_BODY+=$'\n'
